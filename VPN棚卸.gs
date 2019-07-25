@@ -20,10 +20,10 @@ function main() {
     Logger.log(value+"@mori.co.jpにメールを送ります（本番アドレスに送信します）");
 
   /* 各データを準備 */
-  var strTo= value+"@mori.co.jp"; //To　
+  var strTo= value+"@xxx.co.jp"; //To　
   var strName="VPN利用者様"; //苗字
-  var strFrom="k-ikawa@mori.co.jp"; //From
-  var strSender="johounyo@mori.co.jp"; //差出人
+  var strFrom="xxx@xxx.co.jp"; //From
+  var strSender="xxx@xxx.co.jp"; //差出人
 
   /* メール本文を準備 */
   var strSubject = "【要回答】リモートアクセスVPN利用継続確認メール（回答期限：2019/7/31）【情報システム部より】";
