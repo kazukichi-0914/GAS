@@ -17,7 +17,7 @@ function main() {
     //4. 値を取得する
     var value = range.getValue();
     Logger.log(value); 
-    Logger.log(value+"@mori.co.jpにメールを送ります（本番アドレスに送信します）");
+    Logger.log(value+"@xxx.co.jpにメールを送ります（本番アドレスに送信します）");
 
   /* 各データを準備 */
   var strTo= value+"@xxx.co.jp"; //To　
