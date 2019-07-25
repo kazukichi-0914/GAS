@@ -1,0 +1,113 @@
+function myFunction() {
+  var spreadsheet = SpreadsheetApp.openById('1ejubyicWMdkJjEaum07iOS4JnsOepGapdHjZtfUhUWY');
+  
+  //森美術館
+  var twitterId = 'mori_art_museum'
+  var url = 'https://twitter.com/' + twitterId;
+  var response = UrlFetchApp.fetch(url);
+  var html = response.getContentText('UTF-8');  
+  var title = html.match(/data-count=(\d.*?)\s/g);
+  var follows   = title[1].match(/data-count=(\d.*?)\s/)[1];
+  var followers = title[2].match(/data-count=(\d.*?)\s/)[1];
+  Logger.log("フォロー数："+follows);
+  Logger.log("フォロワー数："+followers);
+  // A列→（i,1）の最後の行データの次のセルに値をセット
+  var last_row = spreadsheet.getLastRow();　// 最後の行を取得
+  Logger.log("最終行："+last_row);
+  //現在の日付のフォローフォロワー数を追記
+  var today = new Date();
+  spreadsheet.getActiveSheet().getRange(last_row+1,1).setValue(today);
+  //美術館別推移
+  spreadsheet.getActiveSheet().getRange(last_row+1,2).setValue(follows);
+  spreadsheet.getActiveSheet().getRange(last_row+1,3).setValue(followers);  
+
+  //三菱一号館美術館
+  var twitterId2 = 'ichigokan_PR';
+  var url2 = 'https://twitter.com/' + twitterId2;
+  var response2 = UrlFetchApp.fetch(url2);
+  var html2 = response2.getContentText('UTF-8');  
+  var title2 = html2.match(/data-count=(\d.*?)\s/g);
+  var follows2   = title2[1].match(/data-count=(\d.*?)\s/)[1];
+  var followers2 = title2[2].match(/data-count=(\d.*?)\s/)[1];
+  Logger.log("フォロー数："+follows2);
+  Logger.log("フォロワー数："+followers2);
+  //現在の日付のフォローフォロワー数を追記
+  //美術館別推移
+  spreadsheet.getActiveSheet().getRange(last_row+1,4).setValue(follows2);
+  spreadsheet.getActiveSheet().getRange(last_row+1,5).setValue(followers2);  
+  
+  //21_21 DSIGN SIGHIT
+  var twitterId3 = '2121DESIGNSIGHT';
+  var url3 = 'https://twitter.com/' + twitterId3;
+  var response3 = UrlFetchApp.fetch(url3);
+  var html3 = response3.getContentText('UTF-8');  
+  var title3 = html3.match(/data-count=(\d.*?)\s/g);
+  var follows3   = title3[1].match(/data-count=(\d.*?)\s/)[1];
+  var followers3 = title3[2].match(/data-count=(\d.*?)\s/)[1];
+  Logger.log("フォロー数："+follows3);
+  Logger.log("フォロワー数："+followers3);
+  //現在の日付のフォローフォロワー数を追記
+  //美術館別推移
+  spreadsheet.getActiveSheet().getRange(last_row+1,6).setValue(follows3);
+  spreadsheet.getActiveSheet().getRange(last_row+1,7).setValue(followers3);  
+  
+  //国立科学博物館
+  var twitterId4 = 'museum_kahaku';
+  var url4 = 'https://twitter.com/' + twitterId4;
+  var response4 = UrlFetchApp.fetch(url4);
+  var html4 = response4.getContentText('UTF-8');  
+  var title4 = html4.match(/data-count=(\d.*?)\s/g);
+  var follows4   = title4[1].match(/data-count=(\d.*?)\s/)[1];
+  var followers4 = title4[2].match(/data-count=(\d.*?)\s/)[1];
+  Logger.log("フォロー数："+follows4);
+  Logger.log("フォロワー数："+followers4);
+  //現在の日付のフォローフォロワー数を追記
+  //美術館別推移
+  spreadsheet.getActiveSheet().getRange(last_row+1,8).setValue(follows4);
+  spreadsheet.getActiveSheet().getRange(last_row+1,9).setValue(followers4);  
+  
+  //すみだ北斎美術館
+  var twitterId5 = 'HokusaiMuseum';
+  var url5 = 'https://twitter.com/' + twitterId5;
+  var response5 = UrlFetchApp.fetch(url5);
+  var html5 = response5.getContentText('UTF-8');  
+  var title5 = html5.match(/data-count=(\d.*?)\s/g);
+  var follows5   = title5[1].match(/data-count=(\d.*?)\s/)[1];
+  var followers5 = title5[2].match(/data-count=(\d.*?)\s/)[1];
+  Logger.log("フォロー数："+follows5);
+  Logger.log("フォロワー数："+followers5);
+  //現在の日付のフォローフォロワー数を追記
+  //美術館別推移
+  spreadsheet.getActiveSheet().getRange(last_row+1,10).setValue(follows5);
+  spreadsheet.getActiveSheet().getRange(last_row+1,11).setValue(followers5);  
+ 
+  //静嘉堂文庫美術館
+  var twitterId6 = 'seikadomuseum';
+  var url6 = 'https://twitter.com/' + twitterId6;
+  var response6 = UrlFetchApp.fetch(url6);
+  var html6 = response6.getContentText('UTF-8');  
+  var title6 = html6.match(/data-count=(\d.*?)\s/g);
+  var follows6   = title6[1].match(/data-count=(\d.*?)\s/)[1];
+  //var followers6 = title6[2].match(/data-count=(\d.*?)\s/)[1];
+  Logger.log("フォロー数："+follows6);
+  //Logger.log("フォロワー数："+followers6);
+  //現在の日付のフォローフォロワー数を追記
+  //美術館別推移
+  spreadsheet.getActiveSheet().getRange(last_row+1,12).setValue(follows6);
+  //spreadsheet.getActiveSheet().getRange(last_row+1,13).setValue(followers6);
+  
+    //三鷹の森ジブリ美術館
+  var twitterId7 = 'GhibliML';
+  var url7 = 'https://twitter.com/' + twitterId7;
+  var response7 = UrlFetchApp.fetch(url7);
+  var html7 = response7.getContentText('UTF-8');  
+  var title7 = html7.match(/data-count=(\d.*?)\s/g);
+  var follows7   = title7[1].match(/data-count=(\d.*?)\s/)[1];
+  var followers7 = title7[2].match(/data-count=(\d.*?)\s/)[1];
+  Logger.log("フォロー数："+follows7);
+  Logger.log("フォロワー数："+followers7);
+  //現在の日付のフォローフォロワー数を追記
+  //美術館別推移
+  spreadsheet.getActiveSheet().getRange(last_row+1,14).setValue(follows7);
+  spreadsheet.getActiveSheet().getRange(last_row+1,15).setValue(followers7); 
+}
